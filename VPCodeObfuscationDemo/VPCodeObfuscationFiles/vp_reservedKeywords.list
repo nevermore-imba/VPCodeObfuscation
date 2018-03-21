@@ -1,0 +1,10 @@
+window
+viewDidLoad
+didReceiveMemoryWarning
+application
+applicationWillResignActive
+applicationDidEnterBackground
+applicationWillEnterForeground
+applicationDidBecomeActive
+applicationWillTerminate
+prepareForSegue

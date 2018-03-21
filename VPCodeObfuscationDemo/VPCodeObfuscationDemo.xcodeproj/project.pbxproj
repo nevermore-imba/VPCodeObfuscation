@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F2CF168D20624852006AFD75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2CF168B20624852006AFD75 /* Main.storyboard */; };
+		F2CF168F20624852006AFD75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2CF168E20624852006AFD75 /* Assets.xcassets */; };
+		F2CF169220624852006AFD75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2CF169020624852006AFD75 /* LaunchScreen.storyboard */; };
+		F2CF169520624852006AFD75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CF169420624852006AFD75 /* main.m */; };
+		F2CF169F20624929006AFD75 /* VPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CF169E20624929006AFD75 /* VPAppDelegate.m */; };
+		F2CF16A22062498B006AFD75 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CF16A12062498B006AFD75 /* RootViewController.m */; };
+		F2CF16A52062499B006AFD75 /* VPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CF16A42062499B006AFD75 /* VPViewController.m */; };
+		F2CF16AE20624D00006AFD75 /* vp_func.list in Resources */ = {isa = PBXBuildFile; fileRef = F2CF16A720624CFF006AFD75 /* vp_func.list */; };
+		F2CF16AF20624D00006AFD75 /* vp_resCustom.list in Resources */ = {isa = PBXBuildFile; fileRef = F2CF16A820624CFF006AFD75 /* vp_resCustom.list */; };
+		F2CF16B020624D00006AFD75 /* vp_reservedKeywords.list in Resources */ = {isa = PBXBuildFile; fileRef = F2CF16A920624CFF006AFD75 /* vp_reservedKeywords.list */; };
+		F2CF16B120624D00006AFD75 /* vp_repCustom.list in Resources */ = {isa = PBXBuildFile; fileRef = F2CF16AB20624CFF006AFD75 /* vp_repCustom.list */; };
+		F2CF16B220624D00006AFD75 /* vp_excludeFile.list in Resources */ = {isa = PBXBuildFile; fileRef = F2CF16AC20624CFF006AFD75 /* vp_excludeFile.list */; };
+		F2CF16B320624D00006AFD75 /* vp_specifiedFile.list in Resources */ = {isa = PBXBuildFile; fileRef = F2CF16AD20624CFF006AFD75 /* vp_specifiedFile.list */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F2CF168220624852006AFD75 /* VPCodeObfuscationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPCodeObfuscationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2CF168C20624852006AFD75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F2CF168E20624852006AFD75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2CF169120624852006AFD75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F2CF169320624852006AFD75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2CF169420624852006AFD75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F2CF169C20624886006AFD75 /* vp_confuse.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = vp_confuse.sh; sourceTree = "<group>"; };
+		F2CF169D20624929006AFD75 /* VPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VPAppDelegate.h; sourceTree = "<group>"; };
+		F2CF169E20624929006AFD75 /* VPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VPAppDelegate.m; sourceTree = "<group>"; };
+		F2CF16A02062498B006AFD75 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		F2CF16A12062498B006AFD75 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		F2CF16A32062499B006AFD75 /* VPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VPViewController.h; sourceTree = "<group>"; };
+		F2CF16A42062499B006AFD75 /* VPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VPViewController.m; sourceTree = "<group>"; };
+		F2CF16A720624CFF006AFD75 /* vp_func.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vp_func.list; sourceTree = "<group>"; };
+		F2CF16A820624CFF006AFD75 /* vp_resCustom.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vp_resCustom.list; sourceTree = "<group>"; };
+		F2CF16A920624CFF006AFD75 /* vp_reservedKeywords.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vp_reservedKeywords.list; sourceTree = "<group>"; };
+		F2CF16AA20624CFF006AFD75 /* VPCodeConfuscationMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPCodeConfuscationMacros.h; sourceTree = "<group>"; };
+		F2CF16AB20624CFF006AFD75 /* vp_repCustom.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vp_repCustom.list; sourceTree = "<group>"; };
+		F2CF16AC20624CFF006AFD75 /* vp_excludeFile.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vp_excludeFile.list; sourceTree = "<group>"; };
+		F2CF16AD20624CFF006AFD75 /* vp_specifiedFile.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vp_specifiedFile.list; sourceTree = "<group>"; };
+		F2CF16B420624D1A006AFD75 /* VPPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VPPrefixHeader.pch; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F2CF167F20624852006AFD75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F2CF167920624852006AFD75 = {
+			isa = PBXGroup;
+			children = (
+				F2CF169B2062485D006AFD75 /* VPCodeObfuscationFiles */,
+				F2CF168420624852006AFD75 /* VPCodeObfuscationDemo */,
+				F2CF168320624852006AFD75 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F2CF168320624852006AFD75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2CF168220624852006AFD75 /* VPCodeObfuscationDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F2CF168420624852006AFD75 /* VPCodeObfuscationDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F2CF169D20624929006AFD75 /* VPAppDelegate.h */,
+				F2CF169E20624929006AFD75 /* VPAppDelegate.m */,
+				F2CF16A02062498B006AFD75 /* RootViewController.h */,
+				F2CF16A12062498B006AFD75 /* RootViewController.m */,
+				F2CF16A32062499B006AFD75 /* VPViewController.h */,
+				F2CF16A42062499B006AFD75 /* VPViewController.m */,
+				F2CF168B20624852006AFD75 /* Main.storyboard */,
+				F2CF168E20624852006AFD75 /* Assets.xcassets */,
+				F2CF169020624852006AFD75 /* LaunchScreen.storyboard */,
+				F2CF169320624852006AFD75 /* Info.plist */,
+				F2CF169420624852006AFD75 /* main.m */,
+				F2CF16B420624D1A006AFD75 /* VPPrefixHeader.pch */,
+			);
+			path = VPCodeObfuscationDemo;
+			sourceTree = "<group>";
+		};
+		F2CF169B2062485D006AFD75 /* VPCodeObfuscationFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F2CF16AA20624CFF006AFD75 /* VPCodeConfuscationMacros.h */,
+				F2CF169C20624886006AFD75 /* vp_confuse.sh */,
+				F2CF16AC20624CFF006AFD75 /* vp_excludeFile.list */,
+				F2CF16A720624CFF006AFD75 /* vp_func.list */,
+				F2CF16AB20624CFF006AFD75 /* vp_repCustom.list */,
+				F2CF16A820624CFF006AFD75 /* vp_resCustom.list */,
+				F2CF16A920624CFF006AFD75 /* vp_reservedKeywords.list */,
+				F2CF16AD20624CFF006AFD75 /* vp_specifiedFile.list */,
+			);
+			path = VPCodeObfuscationFiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2CF168120624852006AFD75 /* VPCodeObfuscationDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2CF169820624852006AFD75 /* Build configuration list for PBXNativeTarget "VPCodeObfuscationDemo" */;
+			buildPhases = (
+				F2CF167E20624852006AFD75 /* Sources */,
+				F2CF167F20624852006AFD75 /* Frameworks */,
+				F2CF168020624852006AFD75 /* Resources */,
+				F2CF16A6206249DC006AFD75 /* Run Script Code Obfuscation */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VPCodeObfuscationDemo;
+			productName = VPCodeObfuscationDemo;
+			productReference = F2CF168220624852006AFD75 /* VPCodeObfuscationDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F2CF167A20624852006AFD75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Axe;
+				TargetAttributes = {
+					F2CF168120624852006AFD75 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F2CF167D20624852006AFD75 /* Build configuration list for PBXProject "VPCodeObfuscationDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F2CF167920624852006AFD75;
+			productRefGroup = F2CF168320624852006AFD75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2CF168120624852006AFD75 /* VPCodeObfuscationDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F2CF168020624852006AFD75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2CF169220624852006AFD75 /* LaunchScreen.storyboard in Resources */,
+				F2CF16B020624D00006AFD75 /* vp_reservedKeywords.list in Resources */,
+				F2CF16AF20624D00006AFD75 /* vp_resCustom.list in Resources */,
+				F2CF168F20624852006AFD75 /* Assets.xcassets in Resources */,
+				F2CF16B320624D00006AFD75 /* vp_specifiedFile.list in Resources */,
+				F2CF16B220624D00006AFD75 /* vp_excludeFile.list in Resources */,
+				F2CF168D20624852006AFD75 /* Main.storyboard in Resources */,
+				F2CF16AE20624D00006AFD75 /* vp_func.list in Resources */,
+				F2CF16B120624D00006AFD75 /* vp_repCustom.list in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F2CF16A6206249DC006AFD75 /* Run Script Code Obfuscation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script Code Obfuscation";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = $PROJECT_DIR/VPCodeObfuscationFiles/vp_confuse.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2CF167E20624852006AFD75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2CF169F20624929006AFD75 /* VPAppDelegate.m in Sources */,
+				F2CF169520624852006AFD75 /* main.m in Sources */,
+				F2CF16A52062499B006AFD75 /* VPViewController.m in Sources */,
+				F2CF16A22062498B006AFD75 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F2CF168B20624852006AFD75 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2CF168C20624852006AFD75 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F2CF169020624852006AFD75 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2CF169120624852006AFD75 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F2CF169620624852006AFD75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F2CF169720624852006AFD75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F2CF169920624852006AFD75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/VPPrefixHeader.pch";
+				INFOPLIST_FILE = VPCodeObfuscationDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.axe.VPCodeObfuscationDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F2CF169A20624852006AFD75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/VPPrefixHeader.pch";
+				INFOPLIST_FILE = VPCodeObfuscationDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.axe.VPCodeObfuscationDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2CF167D20624852006AFD75 /* Build configuration list for PBXProject "VPCodeObfuscationDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2CF169620624852006AFD75 /* Debug */,
+				F2CF169720624852006AFD75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2CF169820624852006AFD75 /* Build configuration list for PBXNativeTarget "VPCodeObfuscationDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2CF169920624852006AFD75 /* Debug */,
+				F2CF169A20624852006AFD75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F2CF167A20624852006AFD75 /* Project object */;
+}

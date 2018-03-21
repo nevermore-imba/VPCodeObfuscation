@@ -1,0 +1,11 @@
+*.framework
+*.mm
+*.storyboard
+*.swift
+*.xib
+Libs
+VPCodeObfuscationDemo.xcodeproj
+VPCodeObfuscationFiles
+include
+lib
+libraries
