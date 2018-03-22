@@ -13,8 +13,4 @@
 @property (copy, nonatomic) NSString *vp_title;
 @property (copy, nonatomic) NSString *logoImageName; ///< The logo image name
 
-- (void)testFunctionWithParam1:(NSString*)param10 param2:(BOOL)param20 param3:(void (^)(NSString *value))param30;
-
-- (void)testFunction:(NSString*)testFunction;
-
 @end

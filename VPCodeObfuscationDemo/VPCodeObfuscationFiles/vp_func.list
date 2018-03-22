@@ -1,11 +1,9 @@
 VPAppDelegate
 VPViewController
-_logoImageName
+commitMessage
+eliminate
 logoImageName
-param2
-param3
+setLogoImageName
 setVp_title
-setupRootVC
-testFunction
-testFunctionWithParam1
+traffic
 vp_title

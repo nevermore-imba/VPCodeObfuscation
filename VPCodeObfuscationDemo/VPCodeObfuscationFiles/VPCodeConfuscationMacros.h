@@ -1,18 +1,16 @@
 #ifndef VPCodeConfuscationMacros_h
 #define VPCodeConfuscationMacros_h
 
-/// The VPCodeConfuscationMacros.h file be created by vp_confuse.sh shell at 2018-03-22 12:16:34 by Axe.
+/// The VPCodeConfuscationMacros.h file be created by vp_confuse.sh shell at 2018-03-22 15:54:34 by Axe.
 
-#define VPAppDelegate UI457b6snSlbq0ac
-#define VPViewController hsKrV9gtfzEDHfYc
-#define _logoImageName _iWWzqSQckFxc12gq
-#define logoImageName iWWzqSQckFxc12gq
-#define param2 cDLZpDl9FX6HXaD4
-#define param3 wuVDJI7hHHm1Qaqz
-#define setVp_title setYKxfBIKdUdN5WA8J
-#define setupRootVC nquPA8laB6TWRMQK
-#define testFunction X6IeLXku50wPz1v9
-#define testFunctionWithParam1 RKOuREnp8GYeE8hb
-#define vp_title yKxfBIKdUdN5WA8J
+#define VPAppDelegate pEEAXTcmhE8tsfEY
+#define VPViewController l864N43ix2nCPYBe
+#define commitMessage cOOQsWf7oPLVm1aM
+#define eliminate FfNVaFJViXfWYJpb
+#define logoImageName idNLnXvKuGrNpFDu
+#define setLogoImageName setIdNLnXvKuGrNpFDu
+#define setVp_title setMhrl0h6zk2SI94zZ
+#define traffic LfIgLvwhu2JMubud
+#define vp_title mhrl0h6zk2SI94zZ
 
 #endif /* VPCodeConfuscationMacros_h */

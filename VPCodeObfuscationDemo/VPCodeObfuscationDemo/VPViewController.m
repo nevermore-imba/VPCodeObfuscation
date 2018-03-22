@@ -19,7 +19,8 @@
     // Do any additional setup after loading the view.
 
 	self.vp_title = nil;
-	_logoImageName = @"logo.png";
+
+	[self setLogoImageName:@"logo.png"];
 }
 
 - (void)setVp_title:(NSString *)vp_title {
@@ -27,13 +28,8 @@
 		vp_title = @"null";
 	}
 	NSLog(@"vp_title = %@", vp_title);
+	NSLog(@"logoImageName = %@", self.logoImageName);
 }
-
-- (void)testFunctionWithParam1:(NSString*)param10 param2:(BOOL)param20 param3:(void (^)(NSString *value))param30 {
-	
-}
-
-- (void)testFunction:(NSString*)testFunction {}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

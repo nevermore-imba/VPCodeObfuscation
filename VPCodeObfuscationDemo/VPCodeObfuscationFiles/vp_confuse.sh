@@ -39,15 +39,15 @@ EXCLUDE_FILE="$CONFUSE_ROOT_FILE/${FILE_NAME_PREFIX}_excludeFile.list"
 export LC_CTYPE=C
 
 ramdomString() {
-openssl rand -base64 64 | tr -cd 'a-zA-Z0-9' | sed 's/^[0-9]*//g' | head -c 16
+	openssl rand -base64 64 | tr -cd 'a-zA-Z0-9' | sed 's/^[0-9]*//g' | head -c 16
 }
 
 createDatabase() {
-echo "create table $TABLE_NAME(src text, des text, date text);" | sqlite3 $SYMBOL_DB_FILE
+	echo "create table $TABLE_NAME(src text, des text, date text);" | sqlite3 $SYMBOL_DB_FILE
 }
 
 insertValue() {
-echo "insert into $TABLE_NAME values('$1' ,'$2' ,'$3');" | sqlite3 $SYMBOL_DB_FILE
+	echo "insert into $TABLE_NAME values('$1' ,'$2' ,'$3');" | sqlite3 $SYMBOL_DB_FILE
 }
 
 if [ ! -f $RESERVEDKEYWORDS ]
@@ -186,10 +186,10 @@ rm -f all_property_path.txt
 ## function list
 
 rm -f func_proxy.txt
-grep -v "IBAction" funcPaths.txt | sed 's/;.*//g' | sed 's/[{}]/ /g' | sed 's/[-+]//g' | sed 's/^[ ]*//g' | sed 's/[ ]*$//g' | sed 's/([^)]*)*//g' | sed 's/[ ][ ]*/ /g' | sed "/^init/d"| sort | uniq | sed '/^$/d' > func_proxy.txt
+grep -v "IBAction" funcPaths.txt | sed 's/;.*//g' | sed 's/[{}]/ /g' | sed 's/[-+]//g' | sed 's/^[ ]*//g' | sed 's/[ ]*$//g' | sed 's/([^)]*)*//g' | sed 's/[ ][ ]*/ /g' | sed 's/ *: */:/g' | sed 's///g' | sed "/^init/d"| sort | uniq | sed '/^$/d' > func_proxy.txt
 rm -f funcPaths.txt
 
-rm -f filter_func.txt
+rm -f func_proxy_tmp.txt
 cat func_proxy.txt |
 while read line
 do
@@ -200,16 +200,20 @@ IFS="$OLD_IFS"
 for data in ${arr[@]}
 do
 first_data=`echo $data | awk -F ":" '{print $1}'`
-echo $first_data >> filter_func.txt
+echo $first_data >> func_proxy_tmp.txt
 done
 done
 rm -f func_proxy.txt
+
+rm -f filter_func.txt
+cat func_proxy_tmp.txt | sort | uniq | sed '/^$/d' > filter_func.txt
+rm -f func_proxy_tmp.txt
 
 rm -f all_func_path.txt
 grep -h -r -I "^[-+]" $ROOT_FOLDER $EXCLUDE_DIR --include '*.[mh]' > all_func_path.txt
 
 rm -f func_with_ibaction_proxy.txt
-grep "IBAction" all_func_path.txt | sed 's/;.*//g' | sed 's/[{}]/ /g' | sed 's/[-+]//g' | sed 's/^[ ]*//g' | sed 's/[ ]*$//g' | sed 's/([^)]*)*//g' | sed 's/[ ][ ]*/ /g' | sed "/^init/d"| sort | uniq | sed '/^$/d' > func_with_ibaction_proxy.txt
+grep "IBAction" all_func_path.txt | sed 's/;.*//g' | sed 's/[{}]/ /g' | sed 's/[-+]//g' | sed 's/^[ ]*//g' | sed 's/[ ]*$//g' | sed 's/([^)]*)*//g' | sed 's/[ ][ ]*/ /g' | sed 's/ *: */:/g' | sed 's///g' | sed "/^init/d"| sort | uniq | sed '/^$/d' > func_with_ibaction_proxy.txt
 rm -f all_func_path.txt
 
 if [ ! -f func_with_ibaction.txt ]

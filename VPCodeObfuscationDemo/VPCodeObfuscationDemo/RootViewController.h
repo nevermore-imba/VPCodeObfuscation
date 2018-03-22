@@ -10,6 +10,7 @@
 
 @interface RootViewController : UIViewController
 
-- (void)setupRootVC;
+- (void)commitMessage:(NSString *)message;
+- (void)commitMessage  :  (NSString *)message eliminate :(id)eliminate traffic: (void (^)(BOOL val, NSArray *lists))traffic;
 
 @end
