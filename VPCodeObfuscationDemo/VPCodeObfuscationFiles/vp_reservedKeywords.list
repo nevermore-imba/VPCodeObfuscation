@@ -2,9 +2,11 @@ window
 viewDidLoad
 didReceiveMemoryWarning
 application
+didFinishLaunchingWithOptions
 applicationWillResignActive
 applicationDidEnterBackground
 applicationWillEnterForeground
 applicationDidBecomeActive
 applicationWillTerminate
 prepareForSegue
+sender

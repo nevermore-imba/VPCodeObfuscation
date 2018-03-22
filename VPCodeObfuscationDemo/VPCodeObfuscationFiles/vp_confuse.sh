@@ -184,15 +184,55 @@ grep "IBOutlet" all_property_path.txt | sed 's/;.*//g' | sed "s/( *^/ /g" | sed 
 rm -f all_property_path.txt
 
 ## function list
-rm -f filter_func.txt
-grep -v "IBAction" funcPaths.txt | sed 's/;.*//g' | awk -F':' '{print $1}' | sed "s/[+-]//g" | sed 's/(.*)//g' | sed 's/[,: *\^\/\{}]//g' | sed 's/[[:space:]]//g' | sed "/^init/d"| sort | uniq | sed '/^$/d' > filter_func.txt
+
+rm -f func_proxy.txt
+grep -v "IBAction" funcPaths.txt | sed 's/;.*//g' | sed 's/[{}]/ /g' | sed 's/[-+]//g' | sed 's/^[ ]*//g' | sed 's/[ ]*$//g' | sed 's/([^)]*)*//g' | sed 's/[ ][ ]*/ /g' | sed "/^init/d"| sort | uniq | sed '/^$/d' > func_proxy.txt
 rm -f funcPaths.txt
+
+rm -f filter_func.txt
+cat func_proxy.txt |
+while read line
+do
+OLD_IFS="$IFS"
+IFS=" "
+arr=($line)
+IFS="$OLD_IFS"
+for data in ${arr[@]}
+do
+first_data=`echo $data | awk -F ":" '{print $1}'`
+echo $first_data >> filter_func.txt
+done
+done
+rm -f func_proxy.txt
 
 rm -f all_func_path.txt
 grep -h -r -I "^[-+]" $ROOT_FOLDER $EXCLUDE_DIR --include '*.[mh]' > all_func_path.txt
-rm -f func_with_ibaction.txt
-grep "IBAction" all_func_path.txt | sed 's/;.*//g' | awk -F':' '{print $1}' | sed "s/[+-]//g" | sed 's/(.*)//g' | sed 's/[,: *\^\/\{}]//g' | sed 's/[[:space:]]//g' | sed "/^init/d"| sort | uniq | sed '/^$/d' > func_with_ibaction.txt
+
+rm -f func_with_ibaction_proxy.txt
+grep "IBAction" all_func_path.txt | sed 's/;.*//g' | sed 's/[{}]/ /g' | sed 's/[-+]//g' | sed 's/^[ ]*//g' | sed 's/[ ]*$//g' | sed 's/([^)]*)*//g' | sed 's/[ ][ ]*/ /g' | sed "/^init/d"| sort | uniq | sed '/^$/d' > func_with_ibaction_proxy.txt
 rm -f all_func_path.txt
+
+if [ ! -f func_with_ibaction.txt ]
+then
+touch func_with_ibaction.txt
+else
+rm -f func_with_ibaction.txt
+fi
+
+cat func_with_ibaction_proxy.txt |
+while read line
+do
+OLD_IFS="$IFS"
+IFS=" "
+arr=($line)
+IFS="$OLD_IFS"
+for data in ${arr[@]}
+do
+first_data=`echo $data | awk -F ":" '{print $1}'`
+echo $first_data >> func_with_ibaction.txt
+done
+done
+rm -f func_with_ibaction_proxy.txt
 
 ## class name list
 rm -f filter_class_tmp.txt

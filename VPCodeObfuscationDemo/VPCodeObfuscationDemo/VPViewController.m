@@ -29,6 +29,12 @@
 	NSLog(@"vp_title = %@", vp_title);
 }
 
+- (void)testFunctionWithParam1:(NSString*)param10 param2:(BOOL)param20 param3:(void (^)(NSString *value))param30 {
+	
+}
+
+- (void)testFunction:(NSString*)testFunction {}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

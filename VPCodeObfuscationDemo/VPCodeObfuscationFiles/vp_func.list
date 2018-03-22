@@ -2,5 +2,10 @@ VPAppDelegate
 VPViewController
 _logoImageName
 logoImageName
+param2
+param3
 setVp_title
+setupRootVC
+testFunction
+testFunctionWithParam1
 vp_title
