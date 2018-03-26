@@ -17,33 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-	self.vp_title = nil;
-
-	[self setLogoImageName:@"logo.png"];
 }
 
-- (void)setVp_title:(NSString *)vp_title {
-	if (!vp_title) {
-		vp_title = @"null";
-	}
-	NSLog(@"vp_title = %@", vp_title);
-	NSLog(@"logoImageName = %@", self.logoImageName);
+- (void)testFunction1:(NSString *)params0
+			  params1:(NSString *)params1
+			  params2:(NSArray *)params2 {
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)testFunction2:(NSString *)params3 params4:(NSString *)params4 {
+	
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

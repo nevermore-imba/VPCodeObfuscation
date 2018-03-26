@@ -159,13 +159,13 @@ cat filePaths.txt |
 while read filepath
 do
 grep -h -r -I "^@interface" $filepath >> classPaths.txt
-grep -h -r -I "^[-+]"       $filepath >> funcPaths.txt
+grep -r -n -I -w "^[-+]"    $filepath >> funcPaths.txt
 grep -h -r -I "^@property"  $filepath >> propertyPaths.txt
 grep -h -r -I "^@protocol"  $filepath >> protocolPaths.txt
 done
 else ## empty file
 grep -h -r -I "^@interface" $ROOT_FOLDER $EXCLUDE_DIR --include '*.[mh]' > classPaths.txt
-grep -h -r -I "^[-+]"       $ROOT_FOLDER $EXCLUDE_DIR --include '*.[mh]' > funcPaths.txt
+grep -r -n -I -w "^[-+]"    $ROOT_FOLDER $EXCLUDE_DIR --include '*.[mh]' > funcPaths.txt
 grep -h -r -I "^@property"  $ROOT_FOLDER $EXCLUDE_DIR --include '*.[mh]' > propertyPaths.txt
 grep -h -r -I "^@protocol"  $ROOT_FOLDER $EXCLUDE_DIR --include '*.[mh]' > protocolPaths.txt
 fi
@@ -185,9 +185,71 @@ rm -f all_property_path.txt
 
 ## function list
 
-rm -f func_proxy.txt
-grep -v "IBAction" funcPaths.txt | sed 's/;.*//g' | sed 's/[{}]/ /g' | sed 's/[-+]//g' | sed 's/^[ ]*//g' | sed 's/[ ]*$//g' | sed 's/([^)]*)*//g' | sed 's/[ ][ ]*/ /g' | sed 's/ *: */:/g' | sed 's///g' | sed "/^init/d"| sort | uniq | sed '/^$/d' > func_proxy.txt
+rm -f full_func.txt
+rm -f infull_func.txt
+
+rm -f func_info_tmp.txt
+cat funcPaths.txt | sed 's/;.*/;/g' | sed 's/\/\/.*//g' > func_info_tmp.txt
 rm -f funcPaths.txt
+
+cat func_info_tmp.txt |
+while read msg
+do
+func=$(echo "$msg" | cut -d ":" -f 3-)
+echo AAA: $func
+if [[ $func =~ [';''{'] ]]
+then
+echo $func >> full_func.txt
+else
+echo $msg >> infull_func.txt
+fi
+done
+rm -f func_info_tmp.txt
+
+rm -f infull_to_full_func.txt
+cat infull_func.txt |
+while read msg
+do
+rm -f tmp.txt
+path=$(echo "$msg" | cut -d ":" -f 1)
+line=$(echo "$msg" | cut -d ":" -f 2)
+func=$(echo "$msg" | cut -d ":" -f 3-)
+echo $func > tmp.txt
+i=$[$line+1]
+result=1
+while(($result > 0))
+do
+next_line_p="${i}p"
+next_line_func=`sed -n $next_line_p $path`
+next_line_func_tmp=`echo $next_line_func | sed 's/;.*/;/g' | sed 's/\/\/.*//g'`
+if [[ $next_line_func_tmp =~ [-+] ]]
+then
+break;
+else
+if [[ $next_line_func_tmp =~ [':'';''{'] ]]
+then
+echo Joining method parameter: $next_line_func_tmp
+echo $next_line_func_tmp >> tmp.txt
+else
+break
+fi
+fi
+
+i=$(($i+1))
+done
+cat tmp.txt | xargs >> infull_to_full_func.txt
+rm -f tmp.txt
+done
+rm -f infull_func.txt
+
+rm -f function_path.txt
+cat full_func.txt infull_to_full_func.txt | sort | uniq | sed '/^$/d' > function_path.txt
+rm -f full_func.txt
+rm -f infull_to_full_func.txt
+
+rm -f func_proxy.txt
+grep -v "IBAction" function_path.txt | sed 's/;.*//g' | sed 's/[{}]/ /g' | sed 's/[-+]//g' | sed 's/^[ ]*//g' | sed 's/[ ]*$//g' | sed 's/([^)]*)*//g' | sed 's/[ ][ ]*/ /g' | sed 's/ *: */:/g' | sed 's///g' | sed "/^init/d"| sort | uniq | sed '/^$/d' > func_proxy.txt
+rm -f function_path.txt
 
 rm -f func_proxy_tmp.txt
 cat func_proxy.txt |
@@ -210,7 +272,7 @@ cat func_proxy_tmp.txt | sort | uniq | sed '/^$/d' > filter_func.txt
 rm -f func_proxy_tmp.txt
 
 rm -f all_func_path.txt
-grep -h -r -I "^[-+]" $ROOT_FOLDER $EXCLUDE_DIR --include '*.[mh]' > all_func_path.txt
+grep -r -n -I -w "^[-+]" $ROOT_FOLDER $EXCLUDE_DIR --include '*.[mh]' > all_func_path.txt
 
 rm -f func_with_ibaction_proxy.txt
 grep "IBAction" all_func_path.txt | sed 's/;.*//g' | sed 's/[{}]/ /g' | sed 's/[-+]//g' | sed 's/^[ ]*//g' | sed 's/[ ]*$//g' | sed 's/([^)]*)*//g' | sed 's/[ ][ ]*/ /g' | sed 's/ *: */:/g' | sed 's///g' | sed "/^init/d"| sort | uniq | sed '/^$/d' > func_with_ibaction_proxy.txt

@@ -10,7 +10,8 @@
 
 @interface VPViewController : UIViewController
 
-@property (copy, nonatomic) NSString *vp_title;
-@property (copy, nonatomic) NSString *logoImageName; ///< The logo image name
+- (void)testFunction1:(NSString *)params0
+			  params1:(NSString *)params1
+			  params2:(NSArray *)params2;
 
 @end

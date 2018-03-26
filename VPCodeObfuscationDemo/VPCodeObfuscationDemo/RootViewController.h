@@ -9,8 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UIViewController
-
-- (void)commitMessage:(NSString *)message;
-- (void)commitMessage  :  (NSString *)message eliminate :(id)eliminate traffic: (void (^)(BOOL val, NSArray *lists))traffic;
-
+@property (copy, nonatomic) NSString *vpTitle;
 @end

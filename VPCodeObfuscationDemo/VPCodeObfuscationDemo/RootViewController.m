@@ -9,25 +9,21 @@
 #import "RootViewController.h"
 
 @interface RootViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *testButton;
 
 @end
 
 @implementation RootViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	[super viewDidLoad];
 
-	[self commitMessage:@"Error"];
+	[self setVpTitle:@"Vp"];
 }
 
-
-- (void)commitMessage:(NSString *)message {
-	[self commitMessage:message eliminate:@{@"id" : @"2u94uw04u0"} traffic:nil];
+- (IBAction)clickTestButtonAction:(UIButton *)sender forEvent:(UIEvent *)event {
+	
 }
 
-- (void)commitMessage:(NSString *)message0 eliminate:(id)eliminate1 traffic:(void (^)(BOOL val, NSArray *lists))traffic2 {
-	NSLog(@"message: %@, eliminate: %@, traffic: %@", message0, eliminate1, traffic2);
-}
 
 @end
