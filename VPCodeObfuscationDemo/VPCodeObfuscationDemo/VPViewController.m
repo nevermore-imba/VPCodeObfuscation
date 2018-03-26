@@ -21,9 +21,7 @@
 
 - (void)testFunction1:(NSString *)params0
 			  params1:(NSString *)params1
-			  params2:(NSArray *)params2 {
-
-}
+			  params2:(NSArray *)params2 {}
 
 - (void)testFunction2:(NSString *)params3 params4:(NSString *)params4 {
 	

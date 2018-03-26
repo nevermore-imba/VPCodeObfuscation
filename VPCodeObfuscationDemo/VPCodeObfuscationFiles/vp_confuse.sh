@@ -272,7 +272,7 @@ cat func_proxy_tmp.txt | sort | uniq | sed '/^$/d' > filter_func.txt
 rm -f func_proxy_tmp.txt
 
 rm -f all_func_path.txt
-grep -r -n -I -w "^[-+]" $ROOT_FOLDER $EXCLUDE_DIR --include '*.[mh]' > all_func_path.txt
+grep -h -r -I "^[-+]" $ROOT_FOLDER $EXCLUDE_DIR --include '*.[mh]' > all_func_path.txt
 
 rm -f func_with_ibaction_proxy.txt
 grep "IBAction" all_func_path.txt | sed 's/;.*//g' | sed 's/[{}]/ /g' | sed 's/[-+]//g' | sed 's/^[ ]*//g' | sed 's/[ ]*$//g' | sed 's/([^)]*)*//g' | sed 's/[ ][ ]*/ /g' | sed 's/ *: */:/g' | sed 's///g' | sed "/^init/d"| sort | uniq | sed '/^$/d' > func_with_ibaction_proxy.txt
