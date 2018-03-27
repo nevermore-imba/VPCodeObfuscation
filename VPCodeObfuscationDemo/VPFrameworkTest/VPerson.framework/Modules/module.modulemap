@@ -1,0 +1,6 @@
+framework module VPerson {
+  umbrella header "VPerson.h"
+
+  export *
+  module * { export * }
+}

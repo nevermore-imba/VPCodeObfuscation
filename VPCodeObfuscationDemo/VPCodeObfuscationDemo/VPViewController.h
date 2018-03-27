@@ -14,4 +14,6 @@
 			  params1:(NSString *)params1
 			  params2:(NSArray *)params2;
 
+- (void)introduce;
+
 @end

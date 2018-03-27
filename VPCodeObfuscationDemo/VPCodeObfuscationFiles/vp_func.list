@@ -1,8 +1,10 @@
 VPAppDelegate
 VPViewController
+_vpTitle
 params1
 params2
 params4
+personObject
 setVpTitle
 testFunction1
 testFunction2

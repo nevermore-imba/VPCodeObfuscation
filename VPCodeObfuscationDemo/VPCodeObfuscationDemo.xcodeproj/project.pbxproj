@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F234E0E52069EF1200010036 /* VPerson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F234E0E42069EF1200010036 /* VPerson.framework */; };
 		F2CF168D20624852006AFD75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2CF168B20624852006AFD75 /* Main.storyboard */; };
 		F2CF168F20624852006AFD75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2CF168E20624852006AFD75 /* Assets.xcassets */; };
 		F2CF169220624852006AFD75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2CF169020624852006AFD75 /* LaunchScreen.storyboard */; };
@@ -14,35 +15,23 @@
 		F2CF169F20624929006AFD75 /* VPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CF169E20624929006AFD75 /* VPAppDelegate.m */; };
 		F2CF16A22062498B006AFD75 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CF16A12062498B006AFD75 /* RootViewController.m */; };
 		F2CF16A52062499B006AFD75 /* VPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CF16A42062499B006AFD75 /* VPViewController.m */; };
-		F2CF16AE20624D00006AFD75 /* vp_func.list in Resources */ = {isa = PBXBuildFile; fileRef = F2CF16A720624CFF006AFD75 /* vp_func.list */; };
-		F2CF16AF20624D00006AFD75 /* vp_resCustom.list in Resources */ = {isa = PBXBuildFile; fileRef = F2CF16A820624CFF006AFD75 /* vp_resCustom.list */; };
-		F2CF16B020624D00006AFD75 /* vp_reservedKeywords.list in Resources */ = {isa = PBXBuildFile; fileRef = F2CF16A920624CFF006AFD75 /* vp_reservedKeywords.list */; };
-		F2CF16B120624D00006AFD75 /* vp_repCustom.list in Resources */ = {isa = PBXBuildFile; fileRef = F2CF16AB20624CFF006AFD75 /* vp_repCustom.list */; };
-		F2CF16B220624D00006AFD75 /* vp_excludeFile.list in Resources */ = {isa = PBXBuildFile; fileRef = F2CF16AC20624CFF006AFD75 /* vp_excludeFile.list */; };
-		F2CF16B320624D00006AFD75 /* vp_specifiedFile.list in Resources */ = {isa = PBXBuildFile; fileRef = F2CF16AD20624CFF006AFD75 /* vp_specifiedFile.list */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F234E0E42069EF1200010036 /* VPerson.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VPerson.framework; sourceTree = "<group>"; };
 		F2CF168220624852006AFD75 /* VPCodeObfuscationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPCodeObfuscationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2CF168C20624852006AFD75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2CF168E20624852006AFD75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2CF169120624852006AFD75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2CF169320624852006AFD75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2CF169420624852006AFD75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F2CF169C20624886006AFD75 /* vp_confuse.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = vp_confuse.sh; sourceTree = "<group>"; };
 		F2CF169D20624929006AFD75 /* VPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VPAppDelegate.h; sourceTree = "<group>"; };
 		F2CF169E20624929006AFD75 /* VPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VPAppDelegate.m; sourceTree = "<group>"; };
 		F2CF16A02062498B006AFD75 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		F2CF16A12062498B006AFD75 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		F2CF16A32062499B006AFD75 /* VPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VPViewController.h; sourceTree = "<group>"; };
 		F2CF16A42062499B006AFD75 /* VPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VPViewController.m; sourceTree = "<group>"; };
-		F2CF16A720624CFF006AFD75 /* vp_func.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vp_func.list; sourceTree = "<group>"; };
-		F2CF16A820624CFF006AFD75 /* vp_resCustom.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vp_resCustom.list; sourceTree = "<group>"; };
-		F2CF16A920624CFF006AFD75 /* vp_reservedKeywords.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vp_reservedKeywords.list; sourceTree = "<group>"; };
 		F2CF16AA20624CFF006AFD75 /* VPCodeConfuscationMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPCodeConfuscationMacros.h; sourceTree = "<group>"; };
-		F2CF16AB20624CFF006AFD75 /* vp_repCustom.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vp_repCustom.list; sourceTree = "<group>"; };
-		F2CF16AC20624CFF006AFD75 /* vp_excludeFile.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vp_excludeFile.list; sourceTree = "<group>"; };
-		F2CF16AD20624CFF006AFD75 /* vp_specifiedFile.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vp_specifiedFile.list; sourceTree = "<group>"; };
 		F2CF16B420624D1A006AFD75 /* VPPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VPPrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,15 +40,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F234E0E52069EF1200010036 /* VPerson.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F234E0E12069ED5B00010036 /* VPFrameworkTest */ = {
+			isa = PBXGroup;
+			children = (
+				F234E0E42069EF1200010036 /* VPerson.framework */,
+			);
+			path = VPFrameworkTest;
+			sourceTree = "<group>";
+		};
 		F2CF167920624852006AFD75 = {
 			isa = PBXGroup;
 			children = (
+				F234E0E12069ED5B00010036 /* VPFrameworkTest */,
 				F2CF169B2062485D006AFD75 /* VPCodeObfuscationFiles */,
 				F2CF168420624852006AFD75 /* VPCodeObfuscationDemo */,
 				F2CF168320624852006AFD75 /* Products */,
@@ -97,13 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				F2CF16AA20624CFF006AFD75 /* VPCodeConfuscationMacros.h */,
-				F2CF169C20624886006AFD75 /* vp_confuse.sh */,
-				F2CF16AC20624CFF006AFD75 /* vp_excludeFile.list */,
-				F2CF16A720624CFF006AFD75 /* vp_func.list */,
-				F2CF16AB20624CFF006AFD75 /* vp_repCustom.list */,
-				F2CF16A820624CFF006AFD75 /* vp_resCustom.list */,
-				F2CF16A920624CFF006AFD75 /* vp_reservedKeywords.list */,
-				F2CF16AD20624CFF006AFD75 /* vp_specifiedFile.list */,
 			);
 			path = VPCodeObfuscationFiles;
 			sourceTree = "<group>";
@@ -168,14 +160,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2CF169220624852006AFD75 /* LaunchScreen.storyboard in Resources */,
-				F2CF16B020624D00006AFD75 /* vp_reservedKeywords.list in Resources */,
-				F2CF16AF20624D00006AFD75 /* vp_resCustom.list in Resources */,
 				F2CF168F20624852006AFD75 /* Assets.xcassets in Resources */,
-				F2CF16B320624D00006AFD75 /* vp_specifiedFile.list in Resources */,
-				F2CF16B220624D00006AFD75 /* vp_excludeFile.list in Resources */,
 				F2CF168D20624852006AFD75 /* Main.storyboard in Resources */,
-				F2CF16AE20624D00006AFD75 /* vp_func.list in Resources */,
-				F2CF16B120624D00006AFD75 /* vp_repCustom.list in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +329,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YYSwizzling",
+					"$(PROJECT_DIR)/VPFrameworkTest",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/VPPrefixHeader.pch";
 				INFOPLIST_FILE = VPCodeObfuscationDemo/Info.plist;
@@ -361,6 +352,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YYSwizzling",
+					"$(PROJECT_DIR)/VPFrameworkTest",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/VPPrefixHeader.pch";
 				INFOPLIST_FILE = VPCodeObfuscationDemo/Info.plist;

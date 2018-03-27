@@ -26,6 +26,9 @@ RESERVEDKEYWORDS="$CONFUSE_ROOT_FILE/${FILE_NAME_PREFIX}_reservedKeywords.list"
 
 STRING_SYMBOL_FILE="$CONFUSE_ROOT_FILE/${FILE_NAME_PREFIX}_func.list"
 
+# Third party framework
+THIRD_PARTY_FRAMEWORK="$CONFUSE_ROOT_FILE/${FILE_NAME_PREFIX}_frameworkKeys.list"
+
 # SQLite_DB
 TABLE_NAME=symbols
 SYMBOL_DB_FILE="$CONFUSE_ROOT_FILE/${FILE_NAME_PREFIX}_symbols.db"
@@ -196,7 +199,6 @@ cat func_info_tmp.txt |
 while read msg
 do
 func=$(echo "$msg" | cut -d ":" -f 3-)
-echo AAA: $func
 if [[ $func =~ [';''{'] ]]
 then
 echo $func >> full_func.txt
@@ -224,17 +226,20 @@ next_line_func=`sed -n $next_line_p $path`
 next_line_func_tmp=`echo $next_line_func | sed 's/;.*/;/g' | sed 's/\/\/.*//g'`
 if [[ $next_line_func_tmp =~ [-+] ]]
 then
-break;
+break
 else
-if [[ $next_line_func_tmp =~ [':'';''{'] ]]
+if [[ $next_line_func_tmp =~ ":" ]]
 then
-echo Joining method parameter: $next_line_func_tmp
+echo JoiningMethodParameter: $next_line_func_tmp
 echo $next_line_func_tmp >> tmp.txt
+if [[ $next_line_func_tmp =~ ";" ]] || [[ $next_line_func_tmp =~ "{" ]]
+then
+break
+fi
 else
 break
 fi
 fi
-
 i=$(($i+1))
 done
 cat tmp.txt | xargs >> infull_to_full_func.txt
@@ -332,8 +337,63 @@ rm -f filter_protocol.txt
 cat protocolPaths.txt | sed "s/[\<,;].*$//g" | awk '{print $2;}' | sed 's/[[:space:]]//g' | sort | uniq | sed "/^$/d" >> filter_protocol.txt ## protocol
 rm -f protocolPaths.txt
 
-##############################################################################################
+############################ Third party framework #############################
 
+rm -f f.list
+find $ROOT_FOLDER -type f | sed "/\/\./d" >> f.list
+
+rm -f third_party_framework_path.txt
+cat f.list |
+while read line
+do
+if [[ $line =~ ".framework" ]]
+then
+echo $line >> third_party_framework_path.txt
+fi
+done
+rm -f f.list
+
+rm -f third_party_framework_func_path.txt
+rm -f third_party_framework_class_path.txt
+rm -f third_party_framework_property_path.txt
+rm -f third_party_framework_protocol_path.txt
+
+cat third_party_framework_path.txt |
+while read filepath
+do
+grep -h -r -I "^@interface" $filepath >> third_party_framework_class_path.txt
+grep -h -r -I "^[-+]"       $filepath >> third_party_framework_func_path.txt
+grep -h -r -I "^@property"  $filepath >> third_party_framework_property_path.txt
+grep -h -r -I "^@protocol"  $filepath >> third_party_framework_protocol_path.txt
+done
+
+rm -f third_party_framework_path.txt
+
+rm -f third_party_framework_func.txt
+rm -f third_party_framework_class.txt
+rm -f third_party_framework_property.txt
+rm -f third_party_framework_protocol.txt
+
+grep -v "IBOutlet" third_party_framework_property_path.txt | sed 's/;.*//g' | sed 's/__attribute__.*//g' | sed "s/( *^/ /g" | sed "s/) *(/{/g" | sed "s/{.*)/ /g" | sed "s/(.*)/ /g" | sed "s/<.*>//g" | sed "s/[,*]/ /g" | sed 's/[ ][ ]*/ /g' | awk -F " " '{print $NF}' | sort | uniq | sed '/^$/d' > third_party_framework_property.txt
+rm -f third_party_framework_property_path.txt
+
+grep -v "IBAction" third_party_framework_func_path.txt | sed 's/;.*//g' | awk -F':' '{print $1}' | sed "s/[+-]//g" | sed 's/(.*)//g' | sed 's/[,: *\^\/\{}]//g' | sed 's/[[:space:]]//g' | sort | uniq | sed '/^$/d' > third_party_framework_func.txt
+rm -f third_party_framework_func_path.txt
+
+cat third_party_framework_class_path.txt | sed "s/[:(]/ /" | awk '{split($0,s," ");print s[2];}' | sort | uniq | sed '/^$/d' >> third_party_framework_class.txt  ## class
+rm -f third_party_framework_class_path.txt
+
+cat third_party_framework_protocol_path.txt | sed "s/[\<,;].*$//g" | awk '{print $2;}' | sed 's/[[:space:]]//g' | sort | uniq | sed "/^$/d" >> third_party_framework_protocol.txt
+rm -f third_party_framework_protocol_path.txt
+
+cat third_party_framework_func.txt third_party_framework_class.txt third_party_framework_property.txt third_party_framework_protocol.txt | sort | uniq | sed "/^$/d" > $THIRD_PARTY_FRAMEWORK
+
+rm -f third_party_framework_func.txt
+rm -f third_party_framework_class.txt
+rm -f third_party_framework_property.txt
+rm -f third_party_framework_protocol.txt
+
+############################ Third party framework #############################
 ## Generate `Setter` method names based on properties.
 if [ ! -f property_setter_func.txt ]
 then
@@ -486,7 +546,7 @@ rm -f set_property.txt
 rm -f var_property.txt
 
 rm -f res_keys_all.txt
-cat $RESERVEDKEYWORDS $RES_CUSTOM_FILE | sort | uniq | sed '/^$/d' > res_keys_all.txt
+cat $RESERVEDKEYWORDS $RES_CUSTOM_FILE $THIRD_PARTY_FRAMEWORK | sort | uniq | sed '/^$/d' > res_keys_all.txt
 
 rm -f $STRING_SYMBOL_FILE
 rm -f $HEAD_FILE
