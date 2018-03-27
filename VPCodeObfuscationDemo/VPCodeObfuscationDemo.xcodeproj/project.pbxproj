@@ -331,7 +331,6 @@
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/YYSwizzling",
 					"$(PROJECT_DIR)/VPFrameworkTest",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -354,7 +353,6 @@
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/YYSwizzling",
 					"$(PROJECT_DIR)/VPFrameworkTest",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
